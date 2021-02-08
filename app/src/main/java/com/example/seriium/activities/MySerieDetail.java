@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -50,7 +51,6 @@ public class MySerieDetail extends AppCompatActivity {
     // Firebase
     public FirebaseAuth mAuth;
     private UserSerie serieDetails;
-    private List<UserSerie> watchedSeasoneEisodes = new ArrayList<>();
     private boolean isInDatabase = true;
 
     // Preferences
@@ -280,11 +280,68 @@ public class MySerieDetail extends AppCompatActivity {
                 serieDetails.getSeasons().get(position).getEpisodes().get(i).setWatched(SeasonList.get(position).isWatched());
             }
 
+            //Update -> episodesWatched; episodesLeft; nextEpisode;
+            DatabaseReference updateInfoDb = FirebaseDatabase.getInstance().getReference("korisnici/" + mAuth.getCurrentUser().getUid() + "/serije/" + Key);
+            if(SeasonList.get(position).isWatched()) {
+                updateInfoDb.child("episodesWatched").setValue(GetEpisodesWatched());
+                serieDetails.setEpisodesWatched(GetEpisodesWatched());
+                updateInfoDb.child("episodesLeft").setValue(GetEpisodesLeft());
+                serieDetails.setEpisodesLeft(GetEpisodesLeft());
+            }
+            else {
+                updateInfoDb.child("episodesWatched").setValue(GetEpisodesWatched());
+                serieDetails.setEpisodesWatched(GetEpisodesWatched());
+                updateInfoDb.child("episodesLeft").setValue(GetEpisodesLeft());
+                serieDetails.setEpisodesLeft(GetEpisodesLeft());
+            }
+            updateInfoDb.child("nextEpisode").setValue(GetNextEpisode());
+            serieDetails.setNextEpisode(GetNextEpisode());
+
             Gson gson = new Gson();
             String json = gson.toJson(serieDetails);
             SaveData("serie_db_episodes", json);
         }
     };
+
+    private int GetEpisodesWatched () {
+        int EpisodesWatchedDb = 0;
+        for(SerieSeason seasonHelper : serieDetails.getSeasons() ) {
+            for (SerieEpisodes episodeHelper : seasonHelper.getEpisodes()){
+                if(episodeHelper.isWatched()){
+                    EpisodesWatchedDb++;
+                }
+            }
+        }
+        return EpisodesWatchedDb;
+    }
+
+    private int GetEpisodesLeft () {
+        int EpisodesLeftDb = 0;
+        for(SerieSeason seasonHelper : serieDetails.getSeasons() ) {
+            for (SerieEpisodes episodeHelper : seasonHelper.getEpisodes()){
+                if(!episodeHelper.isWatched()){
+                    EpisodesLeftDb++;
+                }
+            }
+        }
+        return EpisodesLeftDb;
+    }
+
+    private String GetNextEpisode() {
+        String nextEpisodeDb = "";
+        for(SerieSeason seasonHelper : serieDetails.getSeasons() ) {
+            for (SerieEpisodes episodeHelper : seasonHelper.getEpisodes()){
+                if(!episodeHelper.isWatched()){
+                    nextEpisodeDb = "S" + episodeHelper.getSeason() + " E" + episodeHelper.getEpisode();
+                    break;
+                }
+            }
+            if(!nextEpisodeDb.isEmpty()) {
+                break;
+            }
+        }
+        return nextEpisodeDb;
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

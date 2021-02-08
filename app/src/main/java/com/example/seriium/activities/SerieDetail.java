@@ -359,13 +359,71 @@ public class SerieDetail extends AppCompatActivity implements Callback<SerieDeta
                 serieFromDatabase.getSeasons().get(position).getEpisodes().get(i).setWatched(SeasonList.get(position).isWatched());
             }
 
-            //Update -> nextEpisode; episodesWatched; episodesLeft;
+            //Update -> episodesWatched; episodesLeft; nextEpisode;
+            DatabaseReference updateInfoDb = FirebaseDatabase.getInstance().getReference("korisnici/" + mAuth.getCurrentUser().getUid() + "/serije/" + Key);
+            if(SeasonList.get(position).isWatched()) {
+                updateInfoDb.child("episodesWatched").setValue(GetEpisodesWatched());
+                serieFromDatabase.setEpisodesWatched(GetEpisodesWatched());
+                updateInfoDb.child("episodesLeft").setValue(GetEpisodesLeft());
+                serieFromDatabase.setEpisodesLeft(GetEpisodesLeft());
+            }
+            else {
+                updateInfoDb.child("episodesWatched").setValue(GetEpisodesWatched());
+                serieFromDatabase.setEpisodesWatched(GetEpisodesWatched());
+                updateInfoDb.child("episodesLeft").setValue(GetEpisodesLeft());
+                serieFromDatabase.setEpisodesLeft(GetEpisodesLeft());
+            }
+            updateInfoDb.child("nextEpisode").setValue(GetNextEpisode());
+            serieFromDatabase.setNextEpisode(GetNextEpisode());
 
             Gson gson = new Gson();
             String json = gson.toJson(serieFromDatabase);
             SaveData("serie_db_episodes", json);
         }
     };
+
+    private int GetEpisodesWatched () {
+        int EpisodesWatchedDb = 0;
+        for(SerieSeason seasonHelper : serieFromDatabase.getSeasons() ) {
+            for (SerieEpisodes episodeHelper : seasonHelper.getEpisodes()){
+                if(episodeHelper.isWatched()){
+                    EpisodesWatchedDb++;
+                }
+            }
+        }
+        return EpisodesWatchedDb;
+    }
+
+    private int GetEpisodesLeft () {
+        int EpisodesLeftDb = 0;
+        for(SerieSeason seasonHelper : serieFromDatabase.getSeasons() ) {
+            for (SerieEpisodes episodeHelper : seasonHelper.getEpisodes()){
+                if(!episodeHelper.isWatched()){
+                    EpisodesLeftDb++;
+                }
+            }
+        }
+        return EpisodesLeftDb;
+    }
+
+    private String GetNextEpisode() {
+        String nextEpisodeDb = "";
+        for(SerieSeason seasonHelper : serieFromDatabase.getSeasons() ) {
+            for (SerieEpisodes episodeHelper : seasonHelper.getEpisodes()){
+                if(!episodeHelper.isWatched()){
+                    nextEpisodeDb = "S" + episodeHelper.getSeason() + " E" + episodeHelper.getEpisode();
+                    break;
+                }
+            }
+            if(!nextEpisodeDb.isEmpty()) {
+                break;
+            }
+        }
+        if(nextEpisodeDb.isEmpty()) {
+            nextEpisodeDb = " -/- ";
+        }
+        return nextEpisodeDb;
+    }
 
     private void initializeRecyclerViewNotAdded(List<String> seasons){
         seasonsNotAddedAdapter = new SeasonsAdapterNotAdded(seasons, mClickNot);

@@ -74,7 +74,7 @@ public class EpisodesAdapter extends  RecyclerView.Adapter<EpisodesAdapter.Episo
 
         public void bind(SerieEpisodes episode){
             episodeName.setText(episode.getName());
-            episodeSE.setText("S" + episode.getSeason() + "E" + episode.getEpisode());
+            episodeSE.setText("S" + episode.getSeason() + " E" + episode.getEpisode());
             episodeAirdate.setText(episode.getAir_date());
 
             if (episode.isWatched()) {

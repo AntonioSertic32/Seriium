@@ -148,10 +148,18 @@ public class Seasons extends AppCompatActivity {
             //      1. Kad se odznaci da odznaci i sezonu
             //      2. Kad se oznaci epizoda da provjeri ostale ep te sezone i ak su sve true da stavi sezonu u true
 
+            //Update -> episodesWatched; episodesLeft; nextEpisode;
+            DatabaseReference updateInfoDb = FirebaseDatabase.getInstance().getReference("korisnici/" + mAuth.getCurrentUser().getUid() + "/serije/" + Key);
+
             if(!SerieDetails.getSeasons().get(seasonNumDb).getEpisodes().get(position).isWatched()) {
                 DatabaseReference season = FirebaseDatabase.getInstance().getReference("korisnici/" + mAuth.getCurrentUser().getUid() + "/serije/" + Key + "/seasons/" + seasonNumDb);
                 season.child("watched").setValue(false);
                 SerieDetails.getSeasons().get(seasonNumDb).setWatched(false);
+
+                updateInfoDb.child("episodesWatched").setValue(SerieDetails.getEpisodesWatched() - 1);
+                SerieDetails.setEpisodesWatched(SerieDetails.getEpisodesWatched() - 1);
+                updateInfoDb.child("episodesLeft").setValue(SerieDetails.getEpisodesLeft() + 1);
+                SerieDetails.setEpisodesLeft(SerieDetails.getEpisodesLeft() + 1);
             }
             else {
                 boolean isAllWatched = true;
@@ -165,7 +173,15 @@ public class Seasons extends AppCompatActivity {
                     season.child("watched").setValue(true);
                     SerieDetails.getSeasons().get(seasonNumDb).setWatched(true);
                 }
+
+                updateInfoDb.child("episodesWatched").setValue(SerieDetails.getEpisodesWatched() + 1);
+                SerieDetails.setEpisodesWatched(SerieDetails.getEpisodesWatched() + 1);
+                updateInfoDb.child("episodesLeft").setValue(SerieDetails.getEpisodesLeft() - 1);
+                SerieDetails.setEpisodesLeft(SerieDetails.getEpisodesLeft() - 1);
             }
+
+            updateInfoDb.child("nextEpisode").setValue(GetNextEpisode());
+            SerieDetails.setNextEpisode(GetNextEpisode());
 
             go_back.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -179,15 +195,33 @@ public class Seasons extends AppCompatActivity {
                     finish();
                 }
             });
-            /*
-            SharedPreferences sharedPreferences = getSharedPreferences("MyPref", 0);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            Gson gson = new Gson();
-            String json1 = gson.toJson(seasonNumDb);
-            editor.putString("whichSeason", json1);
-            String json2 = gson.toJson(SerieDetails);
-            editor.putString("UpdatedSerieDetails", json2);
-            editor.apply();*/
         }
     };
+
+    private String GetNextEpisode() {
+        String nextEpisodeDb = "";
+        for(SerieSeason seasonHelper : SerieDetails.getSeasons() ) {
+            for (SerieEpisodes episodeHelper : seasonHelper.getEpisodes()){
+                if(!episodeHelper.isWatched()){
+                    nextEpisodeDb = "S" + episodeHelper.getSeason() + " E" + episodeHelper.getEpisode();
+                    break;
+                }
+            }
+            if(!nextEpisodeDb.isEmpty()) {
+                break;
+            }
+        }
+        return nextEpisodeDb;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        intent.putExtra("whichSeason", seasonNumDb);
+        Gson gson = new Gson();
+        String json2 = gson.toJson(SerieDetails);
+        intent.putExtra("updatedSerieDetails", json2);
+        setResult(RESULT_OK, intent);
+        finish();
+    }
 }
