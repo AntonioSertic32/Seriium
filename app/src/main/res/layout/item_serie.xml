@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/darkOlive">
+
+        <ImageView
+            android:id="@+id/item_serie_poster"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_launcher_round"/>
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8pt"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8pt"
+            android:includeFontPadding="false"
+            android:textColor="@color/darkTurquoise"
+            android:textSize="24dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_serie_poster"
+            app:layout_constraintTop_toTopOf="@id/item_serie_poster"
+            android:text="Game of Thrones"
+            android:shadowColor="#2CA5B5"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="4"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/labelNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/textNetwork"
+            app:layout_constraintStart_toStartOf="@id/textName"
+            app:layout_constraintTop_toBottomOf="@id/textName"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:textColor="@color/darkTurquoise"
+            android:text="Mreža: "
+            />
+
+        <TextView
+            android:id="@+id/textNetwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkTurquoise"
+            android:textSize="12dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toEndOf="@id/labelNetwork"
+            app:layout_constraintTop_toTopOf="@id/labelNetwork"
+            android:text="HBO"
+            />
+
+        <TextView
+            android:id="@+id/labelCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/textCountry"
+            app:layout_constraintStart_toStartOf="@id/labelNetwork"
+            app:layout_constraintTop_toBottomOf="@id/labelNetwork"
+            android:layout_marginTop="5dp"
+            android:textSize="12dp"
+            android:textColor="@color/darkTurquoise"
+            android:text="Država: "
+            />
+
+        <TextView
+            android:id="@+id/textCountry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkTurquoise"
+            android:textSize="12dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toEndOf="@id/labelCountry"
+            app:layout_constraintTop_toTopOf="@id/labelCountry"
+            android:text="US"
+            />
+
+        <TextView
+            android:id="@+id/labelStarted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/textStarted"
+            app:layout_constraintStart_toStartOf="@id/labelCountry"
+            app:layout_constraintTop_toBottomOf="@id/labelCountry"
+            android:layout_marginTop="5dp"
+            android:textSize="12dp"
+            android:textColor="@color/darkTurquoise"
+            android:text="Datum izlaska: "
+            />
+
+        <TextView
+            android:id="@+id/textStarted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkTurquoise"
+            android:textSize="12dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toEndOf="@id/labelStarted"
+            app:layout_constraintTop_toTopOf="@id/labelStarted"
+            android:text="2011-04-17"
+            />
+
+        <TextView
+            android:id="@+id/labelStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/textStatus"
+            app:layout_constraintStart_toStartOf="@id/labelStarted"
+            app:layout_constraintTop_toBottomOf="@id/labelStarted"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="5dp"
+            android:textSize="12dp"
+            android:textColor="@color/darkTurquoise"
+            android:text="Datum izlaska: "
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/textStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkTurquoise"
+            android:textSize="12dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toEndOf="@id/labelStatus"
+            app:layout_constraintTop_toTopOf="@id/labelStatus"
+            android:text="Ended"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

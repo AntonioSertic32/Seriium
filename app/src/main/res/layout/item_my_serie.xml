@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/darkOlive"
+        android:minHeight="140dp">
+
+        <ImageView
+            android:id="@+id/item_my_serie_poster"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/ic_launcher_round"/>
+
+        <TextView
+            android:id="@+id/mytextName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8pt"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8pt"
+            android:includeFontPadding="false"
+            android:textColor="@color/darkTurquoise"
+            android:textSize="24dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_my_serie_poster"
+            app:layout_constraintTop_toTopOf="@id/item_my_serie_poster"
+            android:text="Game of Thrones"
+            android:shadowColor="#2CA5B5"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="4"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/mylabelNextEpisode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/mytextNextEpisode"
+            app:layout_constraintStart_toStartOf="@id/mytextName"
+            app:layout_constraintTop_toBottomOf="@id/mytextName"
+            android:layout_marginTop="15dp"
+            android:textSize="12dp"
+            android:textColor="@color/darkTurquoise"
+            android:text="Sljedeća epizoda: "
+            />
+
+        <TextView
+            android:id="@+id/mytextNextEpisode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkTurquoise"
+            android:textSize="12dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toEndOf="@id/mylabelNextEpisode"
+            app:layout_constraintTop_toTopOf="@id/mylabelNextEpisode"
+            android:text="S01E03"
+            />
+
+        <TextView
+            android:id="@+id/mylabelLeftEpisodes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/mytextLeftEpisodes"
+            app:layout_constraintStart_toStartOf="@id/mylabelNextEpisode"
+            app:layout_constraintTop_toBottomOf="@id/mylabelNextEpisode"
+            android:layout_marginTop="5dp"
+            android:textSize="12dp"
+            android:textColor="@color/darkTurquoise"
+            android:text="Preostalo: "
+            />
+
+        <TextView
+            android:id="@+id/mytextLeftEpisodes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkTurquoise"
+            android:textSize="12dp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toEndOf="@id/mylabelLeftEpisodes"
+            app:layout_constraintTop_toTopOf="@id/mylabelLeftEpisodes"
+            android:text="22 episodes"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            app:layout_constraintStart_toStartOf="@+id/mylabelLeftEpisodes"
+            app:layout_constraintEnd_toStartOf="@id/watchedEpisodes"
+            app:layout_constraintTop_toTopOf="@+id/watchedEpisodes"
+            app:layout_constraintBottom_toBottomOf="@+id/watchedEpisodes"
+            android:layout_marginEnd="20dp"
+            android:progress="25"
+            android:progressDrawable="@layout/progressbar"
+            />
+
+        <TextView
+            android:id="@+id/watchedEpisodes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mylabelLeftEpisodes"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="393 / 500"
+            android:includeFontPadding="false"
+            android:textColor="@color/lavanderBlush"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

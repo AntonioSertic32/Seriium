@@ -1,0 +1,111 @@
+com/example/seriium/listeners/OnSeasonNotAddedClick.java
+ com.example.seriium.listeners.OnSeasonNotAddedClick
+com/example/seriium/BuildConfig.java
+ com.example.seriium.BuildConfig
+com/example/seriium/adapters/SeasonsAdapter.java
+ com.example.seriium.adapters.SeasonsAdapter
+ com.example.seriium.adapters.SeasonsAdapter$SeasonViewHolder
+ com.example.seriium.adapters.SeasonsAdapter$SeasonViewHolder$1
+ com.example.seriium.adapters.SeasonsAdapter$SeasonViewHolder$2
+com/example/seriium/models/SerieDetailsResponse.java
+ com.example.seriium.models.SerieDetailsResponse
+com/example/seriium/listeners/OnSeasonClick.java
+ com.example.seriium.listeners.OnSeasonClick
+com/example/seriium/activities/Login.java
+ com.example.seriium.activities.Login
+ com.example.seriium.activities.Login$1
+ com.example.seriium.activities.Login$2
+ com.example.seriium.activities.Login$3
+ com.example.seriium.activities.Login$3$1
+com/example/seriium/activities/SerieDetail.java
+ com.example.seriium.activities.SerieDetail
+ com.example.seriium.activities.SerieDetail$1
+ com.example.seriium.activities.SerieDetail$2
+ com.example.seriium.activities.SerieDetail$3
+ com.example.seriium.activities.SerieDetail$4
+ com.example.seriium.activities.SerieDetail$5
+ com.example.seriium.activities.SerieDetail$5$1
+ com.example.seriium.activities.SerieDetail$5$2
+ com.example.seriium.activities.SerieDetail$6
+ com.example.seriium.activities.SerieDetail$7
+com/example/seriium/models/UserSerie.java
+ com.example.seriium.models.UserSerie
+ com.example.seriium.models.UserSerie$1
+com/example/seriium/activities/MainActivity.java
+ com.example.seriium.activities.MainActivity
+com/example/seriium/activities/Seasons.java
+ com.example.seriium.activities.Seasons
+ com.example.seriium.activities.Seasons$1
+ com.example.seriium.activities.Seasons$2
+ com.example.seriium.activities.Seasons$2$1
+com/example/seriium/network/EpisodateApi.java
+ com.example.seriium.network.EpisodateApi
+com/example/seriium/adapters/SeasonsAdapterNotAdded.java
+ com.example.seriium.adapters.SeasonsAdapterNotAdded
+ com.example.seriium.adapters.SeasonsAdapterNotAdded$SeasonNotAddedViewHolder
+ com.example.seriium.adapters.SeasonsAdapterNotAdded$SeasonNotAddedViewHolder$1
+com/example/seriium/listeners/OnSerieClick.java
+ com.example.seriium.listeners.OnSerieClick
+com/example/seriium/models/SerieDetails.java
+ com.example.seriium.models.SerieDetails
+com/example/seriium/activities/Register.java
+ com.example.seriium.activities.Register
+ com.example.seriium.activities.Register$1
+ com.example.seriium.activities.Register$2
+ com.example.seriium.activities.Register$3
+ com.example.seriium.activities.Register$3$1
+com/example/seriium/fragments/FirstFragment.java
+ com.example.seriium.fragments.FirstFragment
+ com.example.seriium.fragments.FirstFragment$1
+ com.example.seriium.fragments.FirstFragment$2
+com/example/seriium/adapters/MySeriesAdapter.java
+ com.example.seriium.adapters.MySeriesAdapter
+ com.example.seriium.adapters.MySeriesAdapter$MySerieViewHolder
+ com.example.seriium.adapters.MySeriesAdapter$MySerieViewHolder$1
+com/example/seriium/activities/MySerieDetail.java
+ com.example.seriium.activities.MySerieDetail
+ com.example.seriium.activities.MySerieDetail$1
+ com.example.seriium.activities.MySerieDetail$2
+ com.example.seriium.activities.MySerieDetail$3
+ com.example.seriium.activities.MySerieDetail$4
+ com.example.seriium.activities.MySerieDetail$5
+ com.example.seriium.activities.MySerieDetail$6
+com/example/seriium/adapters/EpisodesAdapter.java
+ com.example.seriium.adapters.EpisodesAdapter
+ com.example.seriium.adapters.EpisodesAdapter$EpisodeViewHolder
+ com.example.seriium.adapters.EpisodesAdapter$EpisodeViewHolder$1
+com/example/seriium/activities/Home.java
+ com.example.seriium.activities.Home
+ com.example.seriium.activities.Home$1
+ com.example.seriium.activities.Home$2
+com/example/seriium/fragments/SecondFragment.java
+ com.example.seriium.fragments.SecondFragment
+ com.example.seriium.fragments.SecondFragment$1
+ com.example.seriium.fragments.SecondFragment$2
+ com.example.seriium.fragments.SecondFragment$3
+ com.example.seriium.fragments.SecondFragment$4
+com/example/seriium/models/Serie.java
+ com.example.seriium.models.Serie
+ com.example.seriium.models.Serie$1
+com/example/seriium/models/User.java
+ com.example.seriium.models.User
+com/example/seriium/listeners/OnMySerieClick.java
+ com.example.seriium.listeners.OnMySerieClick
+com/example/seriium/models/SerieSeason.java
+ com.example.seriium.models.SerieSeason
+com/example/seriium/models/SerieEpisodes.java
+ com.example.seriium.models.SerieEpisodes
+ com.example.seriium.models.SerieEpisodes$1
+com/example/seriium/models/SerieResponse.java
+ com.example.seriium.models.SerieResponse
+com/example/seriium/fragments/FourthFragment.java
+ com.example.seriium.fragments.FourthFragment
+ com.example.seriium.fragments.FourthFragment$1
+com/example/seriium/fragments/ThirdFragment.java
+ com.example.seriium.fragments.ThirdFragment
+com/example/seriium/network/RetrofitManager.java
+ com.example.seriium.network.RetrofitManager
+com/example/seriium/adapters/SeriesAdapter.java
+ com.example.seriium.adapters.SeriesAdapter
+ com.example.seriium.adapters.SeriesAdapter$SerieViewHolder
+ com.example.seriium.adapters.SeriesAdapter$SerieViewHolder$1

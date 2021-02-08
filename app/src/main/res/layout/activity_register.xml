@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.Register"
+    android:background="@drawable/background"
+    >
+
+    <TextView
+        android:id="@+id/justregtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/login_card"
+        android:layout_marginBottom="30dp"
+        android:text="Registracija"
+        android:fontFamily="sans-serif-thin"
+        android:textColor="@color/darkOlive"
+        android:textSize="60dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/login_card"
+        android:layout_width="300dp"
+        android:layout_height="440dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/login_card2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/lavanderBlush">
+
+            <EditText
+                android:id="@+id/reg_ime"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp"
+                android:drawableLeft="@drawable/person"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/blackOlive"
+                android:textColor="@color/blackOlive"
+                android:hint="Ime"
+                android:paddingBottom="20dp"
+                android:textColorHint="@color/blackOlive"
+                android:backgroundTint="@color/blackOlive"
+                android:singleLine="true"
+                />
+
+            <EditText
+                android:id="@+id/reg_prezime"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reg_ime"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:drawableLeft="@drawable/person"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/blackOlive"
+                android:textColor="@color/blackOlive"
+                android:hint="Prezime"
+                android:paddingBottom="20dp"
+                android:textColorHint="@color/blackOlive"
+                android:backgroundTint="@color/blackOlive"
+                android:singleLine="true"
+                />
+
+            <EditText
+                android:id="@+id/reg_email"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reg_prezime"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:drawableLeft="@drawable/email"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/blackOlive"
+                android:textColor="@color/blackOlive"
+                android:hint="Email"
+                android:paddingBottom="20dp"
+                android:textColorHint="@color/blackOlive"
+                android:backgroundTint="@color/blackOlive"
+                android:singleLine="true"
+                android:inputType="textEmailAddress"
+                />
+
+            <EditText
+                android:id="@+id/reg_password"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reg_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:drawableLeft="@drawable/password"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/blackOlive"
+                android:textColor="@color/blackOlive"
+                android:hint="Lozinka"
+                android:paddingBottom="20dp"
+                android:textColorHint="@color/blackOlive"
+                android:backgroundTint="@color/blackOlive"
+                android:singleLine="true"
+                android:inputType="textPassword"
+                />
+
+            <EditText
+                android:id="@+id/reg_password_confirm"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reg_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:drawableLeft="@drawable/password"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/blackOlive"
+                android:textColor="@color/blackOlive"
+                android:hint="Potvrdite lozinku"
+                android:paddingBottom="20dp"
+                android:textColorHint="@color/blackOlive"
+                android:backgroundTint="@color/blackOlive"
+                android:singleLine="true"
+                android:inputType="textPassword"
+                />
+
+
+            <Switch
+                android:id="@+id/reg_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/reg_password_confirm"
+                app:layout_constraintEnd_toEndOf="@+id/reg_password_confirm"
+                />
+
+            <Button
+                android:id="@+id/reg_button"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="40dp"
+                android:minWidth="200dp"
+                android:backgroundTint="@color/darkOlive"
+                android:textColor="@color/lavanderBlush"
+                android:text="Registracija"
+                android:padding="10dp"
+                android:textSize="16dp"
+                android:fontFamily="sans-serif-light"
+                />
+
+            <ProgressBar
+                android:id="@+id/reg_progressbar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toTopOf="@+id/reg_button"
+                app:layout_constraintStart_toStartOf="@+id/reg_button"
+                app:layout_constraintEnd_toEndOf="@+id/reg_button"
+                android:visibility="invisible"
+                />
+
+            <TextView
+                android:id="@+id/login_textreg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Već imate račun?"
+                app:layout_constraintEnd_toEndOf="@+id/reg_button"
+                app:layout_constraintTop_toTopOf="@+id/reg_loginbutton"
+                app:layout_constraintEnd_toStartOf="@+id/reg_loginbutton"
+                app:layout_constraintBottom_toBottomOf="@+id/reg_loginbutton"
+                android:textColor="@color/blackOlive"
+                android:textSize="12dp"
+                />
+
+            <Button
+                android:id="@+id/reg_loginbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Prijavite se.."
+                android:textSize="12dp"
+                android:textColor="@color/blackOlive"
+                android:backgroundTint="@color/lavanderBlush"
+                app:layout_constraintTop_toBottomOf="@+id/reg_button"
+                app:layout_constraintEnd_toEndOf="@+id/reg_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:padding="0dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/login_card2"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/lavanderBlush"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/loginwithgmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="@color/blackOlive"
+
+                app:srcCompat="@drawable/email"
+                app:tint="@color/lavanderBlush"
+                android:scaleType="center"
+                app:maxImageSize="30dp"
+                />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/loginwithfacebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/loginwithgmail"
+                android:layout_marginStart="15dp"
+                android:backgroundTint="@color/blackOlive"
+
+                app:srcCompat="@drawable/facebook"
+                app:tint="@color/lavanderBlush"
+                android:scaleType="center"
+                app:maxImageSize="30dp"
+                />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
