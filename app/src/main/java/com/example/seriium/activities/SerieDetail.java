@@ -102,6 +102,7 @@ public class SerieDetail extends AppCompatActivity implements Callback<SerieDeta
 
         SaveData("serie_db_episodes", null);
         SaveData("serie_episodes", null);
+        SaveData("isStillAdded", "default");
 
         // Firebase
         mAuth = FirebaseAuth.getInstance();
@@ -305,7 +306,6 @@ public class SerieDetail extends AppCompatActivity implements Callback<SerieDeta
                         RemoveSerie();
                         NextKey = Key;
                         ChangeToAdd();
-                        //dialog.cancel();
                 } });
                 myAlertDialog.setNegativeButton("Odustani", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
@@ -358,6 +358,8 @@ public class SerieDetail extends AppCompatActivity implements Callback<SerieDeta
                 episodeDb.child("watched").setValue(SeasonList.get(position).isWatched());
                 serieFromDatabase.getSeasons().get(position).getEpisodes().get(i).setWatched(SeasonList.get(position).isWatched());
             }
+
+            //Update -> nextEpisode; episodesWatched; episodesLeft;
 
             Gson gson = new Gson();
             String json = gson.toJson(serieFromDatabase);

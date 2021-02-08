@@ -85,6 +85,14 @@ public class Seasons extends AppCompatActivity {
         if(serie_db_episodes != null) {
             SerieDetails = gson.fromJson(serie_db_episodes, UserSerie.class);
             not_added = true;
+
+            String isStillAdded = GetData("isStillAdded");
+            if(isStillAdded != null) {
+                not_added = true;
+            }
+            else {
+                not_added = false;
+            }
         }
 
         //Filtriranje

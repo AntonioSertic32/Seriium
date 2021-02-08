@@ -1,9 +1,11 @@
 package com.example.seriium.activities;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -41,6 +43,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.example.seriium.activities.Seasons.SEASON;
+import static com.example.seriium.activities.Seasons.SERIEKEY;
 
 public class MySerieDetail extends AppCompatActivity {
 
@@ -48,6 +51,7 @@ public class MySerieDetail extends AppCompatActivity {
     public FirebaseAuth mAuth;
     private UserSerie serieDetails;
     private List<UserSerie> watchedSeasoneEisodes = new ArrayList<>();
+    private boolean isInDatabase = true;
 
     // Preferences
     public static String SERIE_ID="serie_id";
@@ -82,10 +86,15 @@ public class MySerieDetail extends AppCompatActivity {
     private int NextKey = -1;
     private List<Integer> listKeys = new ArrayList<>();
 
+    public static final int REQUEST = 3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_serie_detail);
+
+        SaveData("serie_db_episodes", null);
+        SaveData("isStillAdded", "default");
 
         // Firebase
         mAuth = FirebaseAuth.getInstance();
@@ -144,22 +153,13 @@ public class MySerieDetail extends AppCompatActivity {
                             isAlreadyInList = true;
                             Key = Integer.parseInt(snapshot.getKey());
                             serieDetails = snapshot.getValue(UserSerie.class);
+
+                            Gson gson = new Gson();
+                            String json = gson.toJson(serieDetails);
+                            SaveData("serie_db_episodes", json);
                             break;
                         }
                     }
-                }
-
-                if(!isAlreadyInList) {
-                    if (listKeys.size() > 0){
-                        NextKey = listKeys.get(listKeys.size() - 1) + 1;
-                    }
-                    else {
-                        NextKey = 0;
-                    }
-                    ChangeToAdd();
-                }
-                else {
-                    ChangeToRemove();
                 }
 
                 serieName.setText(serieDetails.getName());
@@ -169,8 +169,6 @@ public class MySerieDetail extends AppCompatActivity {
                 serieRate.setText(String.format("%.1f",Double.parseDouble(serieDetails.getRating())));
                 serieGenre.setText(String.join(", ", serieDetails.getGenres()));
                 Picasso.get().load(serieDetails.getImagePath()).into(serieImage);
-
-                //List<SerieSeason> serieEpisodes = serieDetails.getSeasons();
 
                 full_description = serieDetails.getDescription();
                 if(serieDetails.getDescription().length() > 150){
@@ -183,13 +181,7 @@ public class MySerieDetail extends AppCompatActivity {
                 for (SerieSeason season : serieDetails.getSeasons()){
                     SeasonList.add(season);
                 }
-
-                initializeRecyclerView(SeasonList, true);
-                checkIfSeasonWatched();
-
-                Gson gson = new Gson();
-                String json = gson.toJson(serieDetails);
-                SaveData("serie_episodes", json);
+                ChangeToRemove();
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -198,20 +190,44 @@ public class MySerieDetail extends AppCompatActivity {
         });
     }
 
-    private void checkIfSeasonWatched () { }
-
     private void ChangeToRemove() {
+        isInDatabase = true;
+        initializeRecyclerView(SeasonList);
         add_serie.setImageResource(R.drawable.remove);
         add_serie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RemoveSerie();
-                NextKey = Key;
-                ChangeToAdd();
+                AlertDialog.Builder myAlertDialog = new AlertDialog.Builder(MySerieDetail.this);
+                myAlertDialog.setTitle("Potvrda");
+                myAlertDialog.setMessage("Jeste li sigurni da želite ukloniti ovu seriju sa svoje liste? Sve vaše označene sezone i epizode će također biti uklonjene..");
+                myAlertDialog.setPositiveButton("Potvrdi", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        RemoveSerie();
+                        NextKey = Key;
+                        ChangeToAdd();
+                        seasonsAdapter.notifyDataSetChanged();
+                    } });
+                myAlertDialog.setNegativeButton("Odustani", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    } });
+                myAlertDialog.show();
             }
         });
     }
+    private void RemoveSerie () {
+        DatabaseReference serije = FirebaseDatabase.getInstance().getReference("korisnici/" + mAuth.getCurrentUser().getUid() + "/serije");
+        serije.child(String.valueOf(Key)).removeValue();
+
+        isInDatabase = true;
+        seasonsAdapter.notifyDataSetChanged();
+
+        SaveData("isStillAdded", null);
+    }
+
     private void ChangeToAdd() {
+        isInDatabase = false;
+        initializeRecyclerView(SeasonList);
         add_serie.setImageResource(R.drawable.add);
         add_serie.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -222,14 +238,11 @@ public class MySerieDetail extends AppCompatActivity {
             }
         });
     }
-
     private void AddSerie () {
         DatabaseReference series = FirebaseDatabase.getInstance().getReference("korisnici/" + mAuth.getCurrentUser().getUid() + "/serije");
         series.child(String.valueOf(NextKey)).setValue(serieDetails);
-    }
-    private void RemoveSerie () {
-        DatabaseReference serije = FirebaseDatabase.getInstance().getReference("korisnici/" + mAuth.getCurrentUser().getUid() + "/serije");
-        serije.child(String.valueOf(Key)).removeValue();
+
+        SaveData("isStillAdded", "yes");
     }
 
     private void SaveData (String key, String value) {
@@ -239,7 +252,7 @@ public class MySerieDetail extends AppCompatActivity {
         editor.apply();
     }
 
-    private void initializeRecyclerView(List<SerieSeason> seasons, boolean isInDatabase){
+    private void initializeRecyclerView(List<SerieSeason> seasons){
         seasonsAdapter = new SeasonsAdapter(seasons, mClick, isInDatabase);
         seasonsRecyclerView.setAdapter(seasonsAdapter);
     }
@@ -249,32 +262,53 @@ public class MySerieDetail extends AppCompatActivity {
         public void onClick(SerieSeason season) {
             Intent intent = new Intent(MySerieDetail.this, Seasons.class );
             intent.putExtra(SEASON, SeasonList.indexOf(season) + 1);
-            startActivity(intent);
+            intent.putExtra(SERIEKEY, Key);
+            startActivityForResult(intent, REQUEST);
         }
 
         @Override
         public void onSeasonCheck(int position) {
-            //CheckSeason(position);
-            //SeasonList.set( position, "New" );
-            //seasonsAdapter.notifyItemChanged(position);
+            // Toast.makeText(MySerieDetail.this, "Pozicija je: " + position, Toast.LENGTH_SHORT).show();
+            DatabaseReference season = FirebaseDatabase.getInstance().getReference("korisnici/" + mAuth.getCurrentUser().getUid() + "/serije/" + Key + "/seasons/" + position);
+            season.child("watched").setValue(!SeasonList.get(position).isWatched());
+            SeasonList.get(position).setWatched(!SeasonList.get(position).isWatched());
+            seasonsAdapter.notifyItemChanged(position);
+            // Update za svaku epizodu te serije
+            for (int i = 0; i < serieDetails.getSeasons().get(position).getEpisodes().size(); i++) {
+                DatabaseReference episodeDb = FirebaseDatabase.getInstance().getReference("korisnici/" + mAuth.getCurrentUser().getUid() + "/serije/" + Key + "/seasons/" + position + "/episodes/" + i);
+                episodeDb.child("watched").setValue(SeasonList.get(position).isWatched());
+                serieDetails.getSeasons().get(position).getEpisodes().get(i).setWatched(SeasonList.get(position).isWatched());
+            }
+
+            Gson gson = new Gson();
+            String json = gson.toJson(serieDetails);
+            SaveData("serie_db_episodes", json);
         }
     };
 
-    private void CheckSeason (int position) {
-        /*
-        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference("korisnici/" + mAuth.getCurrentUser().getUid() + "/serije/" + Key + "/watchedEpisodes");
-        //dohvatiti epizode te sezone
-        position += 1;
-        for(SerieEpisodes episode : serieDetails.getEpisodes()) {
-            if(episode.getSeason() == position) {
-                //Toast.makeText(MySerieDetail.this, String.valueOf(serieDetails.getEpisodes().indexOf(episode) + 1), Toast.LENGTH_SHORT).show();
-                databaseRef.child(String.valueOf(serieDetails.getEpisodes().indexOf(episode))).setValue(episode);
-                //watchedSeasoneEisodes.add(episode);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == REQUEST) {
+            if (data.hasExtra("updatedSerieDetails") && data.hasExtra("whichSeason")) {
+                Bundle extras = data.getExtras();
+
+                Gson gson = new Gson();
+                UserSerie serie = new UserSerie();
+
+                String json = data.getStringExtra("updatedSerieDetails");
+                if(json != null) {
+                    serie = gson.fromJson(json, UserSerie.class);
+                }
+                int whichSeason = extras.getInt("whichSeason");
+
+                SeasonList.get(whichSeason).setWatched(serie.getSeasons().get(whichSeason).isWatched());
+                serieDetails = serie;
+                String json2 = gson.toJson(serieDetails);
+                SaveData("serie_db_episodes", json);
+                seasonsAdapter.notifyItemChanged(whichSeason);
+
             }
         }
-        */
-        //databaseRef.child(String.valueOf(NextKey)).setValue(watchedSeasoneEisodes);
-        //Toast.makeText(MySerieDetail.this, "Id serije je: " + Key, Toast.LENGTH_LONG).show();
     }
-
 }

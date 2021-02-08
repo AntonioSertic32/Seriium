@@ -68,6 +68,8 @@ com/example/seriium/activities/MySerieDetail.java
  com.example.seriium.activities.MySerieDetail$2
  com.example.seriium.activities.MySerieDetail$3
  com.example.seriium.activities.MySerieDetail$4
+ com.example.seriium.activities.MySerieDetail$4$1
+ com.example.seriium.activities.MySerieDetail$4$2
  com.example.seriium.activities.MySerieDetail$5
  com.example.seriium.activities.MySerieDetail$6
 com/example/seriium/adapters/EpisodesAdapter.java

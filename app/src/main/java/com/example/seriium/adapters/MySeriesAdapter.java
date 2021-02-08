@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.seriium.R;
 import com.example.seriium.listeners.OnMySerieClick;
+import com.example.seriium.models.SerieSeason;
 import com.example.seriium.models.UserSerie;
 import com.squareup.picasso.Picasso;
 
@@ -73,12 +74,18 @@ public class MySeriesAdapter extends RecyclerView.Adapter<MySeriesAdapter.MySeri
         }
 
         public void bind(UserSerie serie){
+            int numOfEpisodes = 0;
+
+            for (SerieSeason season : serie.getSeasons()){
+                numOfEpisodes += season.getEpisodes().size();
+            }
+
             this.serie = serie;
             name.setText(String.valueOf(serie.getName()));
             next_episode.setText(serie.getNextEpisode());
             episodes_left.setText(String.valueOf(serie.getEpisodesLeft()));
-            //progressBar.setProgress((serie.getEpisodesWatched() * 100) / serie.getSeasons().size());
-
+            progressBar.setProgress((serie.getEpisodesWatched() * 100) / numOfEpisodes);
+            watched_episodes.setText(serie.getEpisodesWatched() + " / " + numOfEpisodes);
             Picasso.get().load(serie.getThumbnail()).into(image_thumbnail_path);
         }
     }
