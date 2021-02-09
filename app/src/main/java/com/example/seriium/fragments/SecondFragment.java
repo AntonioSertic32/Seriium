@@ -1,6 +1,7 @@
 package com.example.seriium.fragments;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -24,6 +25,7 @@ import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewSwitcher;
 
 import com.example.seriium.R;
 import com.example.seriium.activities.SerieDetail;
@@ -54,6 +56,8 @@ public class SecondFragment extends Fragment implements Callback<SerieResponse> 
     private ConstraintLayout pagination;
     private EditText search;
     private boolean popularOrSearch = false;
+    private ViewSwitcher switcher;
+    private Integer totalPages = 0;
 
     public SecondFragment() {
     }
@@ -75,6 +79,7 @@ public class SecondFragment extends Fragment implements Callback<SerieResponse> 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_second,container,false);
+
         seriesRecyclerView = view.findViewById(R.id.serie_list);
         seriesRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -92,7 +97,7 @@ public class SecondFragment extends Fragment implements Callback<SerieResponse> 
             }
         });
 
-        paginationDisplay = view.findViewById(R.id.paginationDisplay);
+        paginationDisplay = view.findViewById(R.id.textView);
         mainScrollView = view.findViewById(R.id.scrollView);
 
         nextPage = view.findViewById(R.id.next);
@@ -113,6 +118,40 @@ public class SecondFragment extends Fragment implements Callback<SerieResponse> 
             public void onClick(View v) {
                 LoadPrev();
                 mainScrollView.fullScroll(ScrollView.FOCUS_UP);
+            }
+        });
+
+        switcher = view.findViewById(R.id.my_switcher);
+        TextView textView = view.findViewById(R.id.textView);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switcher.showNext();
+
+                EditText yourEditText = (EditText) view.findViewById(R.id.editView);
+                yourEditText.requestFocus();
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(yourEditText, InputMethodManager.SHOW_IMPLICIT);
+
+                yourEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                    @Override
+                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                        if (actionId == EditorInfo.IME_ACTION_DONE) {
+                            if(Integer.parseInt(yourEditText.getText().toString()) > totalPages) {
+                                Toast.makeText(getActivity(), "Unjeli ste broj izvan dometa!", Toast.LENGTH_LONG).show();
+                            }
+                            else {
+                                LoadCustom(Integer.parseInt(yourEditText.getText().toString()));
+                                hideSoftKeyboard(getActivity());
+                                mainScrollView.fullScroll(ScrollView.FOCUS_UP);
+                                switcher.showNext();
+                                return true;
+                            }
+
+                        }
+                        return false;
+                    }
+                });
             }
         });
 
@@ -140,6 +179,8 @@ public class SecondFragment extends Fragment implements Callback<SerieResponse> 
                 prevPage.setEnabled(true);
                 nextPage.setEnabled(true);
             }
+
+            totalPages = serieResponse.getTotalPages();
 
             initializeRecyclerView(serieResponse.getTvShows());
         }
@@ -187,6 +228,17 @@ public class SecondFragment extends Fragment implements Callback<SerieResponse> 
 
     public void LoadPrev() {
         page--;
+        if(popularOrSearch) {
+            Call<SerieResponse> seriesResponseCall = RetrofitManager.getInstance().service().getSearch(search.getText().toString(), page);
+            seriesResponseCall.enqueue(SecondFragment.this);
+        }else {
+            Call<SerieResponse> seriesResponseCall = RetrofitManager.getInstance().service().getMostPopular(page);
+            seriesResponseCall.enqueue(SecondFragment.this);
+        }
+    }
+
+    public void LoadCustom(Integer customPage) {
+        page = customPage;
         if(popularOrSearch) {
             Call<SerieResponse> seriesResponseCall = RetrofitManager.getInstance().service().getSearch(search.getText().toString(), page);
             seriesResponseCall.enqueue(SecondFragment.this);

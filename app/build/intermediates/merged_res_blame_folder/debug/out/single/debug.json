@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\drawable\\check.xml"
     },
     {
-        "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_app_icon.png.flat",
         "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\mipmap-mdpi\\app_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\layout_episode.xml.flat",
@@ -20,12 +20,12 @@
         "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_third.xml.flat",
@@ -40,24 +40,24 @@
         "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\mipmap-hdpi\\app_icon_round.png"
     },
     {
-        "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_fourth.xml.flat",
-        "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\layout\\fragment_fourth.xml"
-    },
-    {
         "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_fourth.xml.flat",
+        "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\layout\\fragment_fourth.xml"
     },
     {
         "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_home.xml.flat",
         "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\layout\\activity_home.xml"
     },
     {
-        "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\drawable_goback.xml.flat",
-        "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\drawable\\goback.xml"
-    },
-    {
         "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\layout_season.xml.flat",
         "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\layout\\season.xml"
+    },
+    {
+        "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\drawable_goback.xml.flat",
+        "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\drawable\\goback.xml"
     },
     {
         "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
@@ -96,6 +96,10 @@
         "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\mipmap-xxhdpi\\app_icon_round.png"
     },
     {
+        "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\drawable_star.xml.flat",
+        "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\drawable\\star.xml"
+    },
+    {
         "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
@@ -126,6 +130,10 @@
     {
         "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_app_icon_foreground.png.flat",
         "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\mipmap-hdpi\\app_icon_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\drawable_clock.xml.flat",
+        "source": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\src\\main\\res\\drawable\\clock.xml"
     },
     {
         "merged": "C:\\Users\\Antonio\\AndroidStudioProjects\\Seriium\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",

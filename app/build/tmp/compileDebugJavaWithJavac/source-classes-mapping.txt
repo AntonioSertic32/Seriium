@@ -22,6 +22,7 @@ com/example/seriium/activities/SerieDetail.java
  com.example.seriium.activities.SerieDetail$1
  com.example.seriium.activities.SerieDetail$2
  com.example.seriium.activities.SerieDetail$3
+ com.example.seriium.activities.SerieDetail$3$1
  com.example.seriium.activities.SerieDetail$4
  com.example.seriium.activities.SerieDetail$5
  com.example.seriium.activities.SerieDetail$5$1
@@ -67,6 +68,7 @@ com/example/seriium/activities/MySerieDetail.java
  com.example.seriium.activities.MySerieDetail$1
  com.example.seriium.activities.MySerieDetail$2
  com.example.seriium.activities.MySerieDetail$3
+ com.example.seriium.activities.MySerieDetail$3$1
  com.example.seriium.activities.MySerieDetail$4
  com.example.seriium.activities.MySerieDetail$4$1
  com.example.seriium.activities.MySerieDetail$4$2
@@ -86,6 +88,8 @@ com/example/seriium/fragments/SecondFragment.java
  com.example.seriium.fragments.SecondFragment$2
  com.example.seriium.fragments.SecondFragment$3
  com.example.seriium.fragments.SecondFragment$4
+ com.example.seriium.fragments.SecondFragment$4$1
+ com.example.seriium.fragments.SecondFragment$5
 com/example/seriium/models/Serie.java
  com.example.seriium.models.Serie
  com.example.seriium.models.Serie$1
@@ -105,6 +109,7 @@ com/example/seriium/fragments/FourthFragment.java
  com.example.seriium.fragments.FourthFragment$1
 com/example/seriium/fragments/ThirdFragment.java
  com.example.seriium.fragments.ThirdFragment
+ com.example.seriium.fragments.ThirdFragment$1
 com/example/seriium/network/RetrofitManager.java
  com.example.seriium.network.RetrofitManager
 com/example/seriium/adapters/SeriesAdapter.java

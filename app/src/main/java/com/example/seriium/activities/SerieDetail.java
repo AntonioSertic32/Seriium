@@ -1,5 +1,6 @@
 package com.example.seriium.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import android.content.DialogInterface;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +37,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -93,6 +98,8 @@ public class SerieDetail extends AppCompatActivity implements Callback<SerieDeta
     private List<Integer> listKeys = new ArrayList<>();
 
     public static final int REQUEST = 2;
+    private YouTubePlayerView youTubePlayerView;
+    private LinearLayout youtubeLayout;
 
 
     @Override
@@ -103,6 +110,11 @@ public class SerieDetail extends AppCompatActivity implements Callback<SerieDeta
         SaveData("serie_db_episodes", null);
         SaveData("serie_episodes", null);
         SaveData("isStillAdded", "default");
+
+        // Youtube
+        youTubePlayerView = findViewById(R.id.youtube_player_view);
+        getLifecycle().addObserver(youTubePlayerView);
+        youtubeLayout = findViewById(R.id.youtubeLayout);
 
         // Firebase
         mAuth = FirebaseAuth.getInstance();
@@ -206,6 +218,22 @@ public class SerieDetail extends AppCompatActivity implements Callback<SerieDeta
                             break;
                         }
                     }
+                }
+
+                if (serieFromDatabase.getYoutubeLink() != null) {
+                    youtubeLayout.setVisibility(View.VISIBLE);
+                    youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+                        @Override
+                        public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                            String videoId = serieFromDatabase.getYoutubeLink();
+                            youTubePlayer.loadVideo(videoId, 0);
+                            youTubePlayer.pause();
+                        }
+                    });
+                    youTubePlayerView.setVisibility(View.VISIBLE);
+                }
+                else {
+                    youTubePlayerView.setVisibility(View.GONE);
                 }
 
                 if(!isAlreadyInList) {

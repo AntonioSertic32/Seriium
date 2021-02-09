@@ -89,6 +89,7 @@
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_protobuf_protobuf_javalite_3_14_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_pierfrancescosoffritti_androidyoutubeplayer_core_10_0_5_aar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_12_0.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp_okhttp_2_7_5.xml" afterDir="false" />
@@ -128,11 +129,13 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/a.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/check.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/clock.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/email.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/facebook.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/password.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/person.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/search.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/star.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" afterDir="false" />
@@ -152,6 +155,7 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/adapters/SeasonsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/adapters/SeasonsAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/fragments/FirstFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/fragments/FirstFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/fragments/SecondFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/fragments/SecondFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/fragments/ThirdFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/fragments/ThirdFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/listeners/OnMySerieClick.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/listeners/OnMySerieClick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/listeners/OnSeasonClick.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/listeners/OnSeasonClick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/models/SerieDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/models/SerieDetails.java" afterDir="false" />
@@ -160,9 +164,11 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/network/EpisodateApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/seriium/network/EpisodateApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_my_serie_detail.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_serie_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_serie_detail.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/episode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/episode.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_first.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_first.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_second.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_second.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_third.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_third.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_my_serie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_my_serie.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/season.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/season.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/navigation.xml" afterDir="false" />
@@ -177,7 +183,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[9356efdc]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_29]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -242,7 +248,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.-956120417">
@@ -393,30 +399,34 @@
     </state>
     <state x="1182" y="287" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612724735237" />
     <state x="1182" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1608996056152" />
-    <state width="1375" height="343" key="GridCell.Tab.0.bottom" timestamp="1612811900543">
+    <state width="1365" height="343" key="GridCell.Tab.0.bottom" timestamp="1612912883932">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1375" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612811900543" />
+    <state width="1365" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612912883932" />
     <state width="913" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1608999949637" />
-    <state width="1375" height="343" key="GridCell.Tab.0.center" timestamp="1612811900541">
+    <state width="1365" height="343" key="GridCell.Tab.0.center" timestamp="1612912883932">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1375" height="343" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612811900541" />
+    <state width="1365" height="343" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612912883932" />
     <state width="913" height="297" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1608999949637" />
-    <state width="1375" height="343" key="GridCell.Tab.0.left" timestamp="1612811900541">
+    <state width="1365" height="343" key="GridCell.Tab.0.left" timestamp="1612912883932">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1375" height="343" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612811900541" />
+    <state width="1365" height="343" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612912883932" />
     <state width="913" height="297" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1608999949637" />
-    <state width="1375" height="343" key="GridCell.Tab.0.right" timestamp="1612811900541">
+    <state width="1365" height="343" key="GridCell.Tab.0.right" timestamp="1612912883932">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1375" height="343" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612811900541" />
+    <state width="1365" height="343" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612912883932" />
     <state width="913" height="297" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1608999949637" />
     <state x="373" y="244" key="RollbackChangesDialog" timestamp="1612554569013">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="373" y="244" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612554569013" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1612898370943">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1612898370943" />
     <state x="396" y="215" key="com.intellij.javaee.MapExternalResourceDialog" timestamp="1611576230586">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
