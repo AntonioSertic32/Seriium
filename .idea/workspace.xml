@@ -244,7 +244,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-viewC:/Users/Antonio/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CinemaMonAmour" />
     <property name="multi-representation-previewC:/Users/Antonio/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
@@ -371,10 +371,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="460" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1611693838223" />
-    <state x="1245" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1612739099242">
+    <state x="1245" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1612969932550">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1245" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1612739099242" />
+    <state x="1245" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1612969932550" />
     <state x="1245" y="244" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1608996256756" />
     <state x="690" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612464602300">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -395,30 +395,30 @@
     </state>
     <state x="1020" y="287" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612031796599" />
     <state x="1020" y="298" key="AndroidCreateResourceFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608990256103" />
-    <state x="1182" y="287" key="FileChooserDialogImpl" timestamp="1612724735237">
+    <state x="1182" y="287" key="FileChooserDialogImpl" timestamp="1612963969232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1182" y="287" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612724735237" />
+    <state x="1182" y="287" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612963969232" />
     <state x="1182" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1608996056152" />
-    <state width="1876" height="343" key="GridCell.Tab.0.bottom" timestamp="1612962778629">
+    <state width="1876" height="343" key="GridCell.Tab.0.bottom" timestamp="1612970366914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612962778629" />
+    <state width="1876" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612970366914" />
     <state width="913" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1608999949637" />
-    <state width="1876" height="343" key="GridCell.Tab.0.center" timestamp="1612962778629">
+    <state width="1876" height="343" key="GridCell.Tab.0.center" timestamp="1612970366913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="343" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612962778629" />
+    <state width="1876" height="343" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612970366913" />
     <state width="913" height="297" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1608999949637" />
-    <state width="1876" height="343" key="GridCell.Tab.0.left" timestamp="1612962778628">
+    <state width="1876" height="343" key="GridCell.Tab.0.left" timestamp="1612970366913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="343" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612962778628" />
+    <state width="1876" height="343" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612970366913" />
     <state width="913" height="297" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1608999949637" />
-    <state width="1876" height="343" key="GridCell.Tab.0.right" timestamp="1612962778629">
+    <state width="1876" height="343" key="GridCell.Tab.0.right" timestamp="1612970366913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="343" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612962778629" />
+    <state width="1876" height="343" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612970366913" />
     <state width="913" height="297" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1608999949637" />
     <state x="373" y="244" key="RollbackChangesDialog" timestamp="1612554569013">
       <screen x="0" y="0" width="1920" height="1040" />
