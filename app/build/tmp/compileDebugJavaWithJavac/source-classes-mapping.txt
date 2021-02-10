@@ -109,6 +109,13 @@ com/example/seriium/models/SerieResponse.java
 com/example/seriium/fragments/FourthFragment.java
  com.example.seriium.fragments.FourthFragment
  com.example.seriium.fragments.FourthFragment$1
+ com.example.seriium.fragments.FourthFragment$2
+ com.example.seriium.fragments.FourthFragment$2$1
+ com.example.seriium.fragments.FourthFragment$2$2
+ com.example.seriium.fragments.FourthFragment$3
+ com.example.seriium.fragments.FourthFragment$3$1
+ com.example.seriium.fragments.FourthFragment$3$2
+ com.example.seriium.fragments.FourthFragment$4
 com/example/seriium/fragments/ThirdFragment.java
  com.example.seriium.fragments.ThirdFragment
  com.example.seriium.fragments.ThirdFragment$1

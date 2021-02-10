@@ -140,7 +140,7 @@ public class Register extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                AddSerie(ime, prezime);
+                                AddUser(ime, prezime);
                                 mProgressBar.setVisibility(View.INVISIBLE);
                                 startActivity(new Intent(Register.this, MainActivity.class));
                                 finish();
@@ -155,7 +155,7 @@ public class Register extends AppCompatActivity {
 
     }
 
-    private void AddSerie (String ime, String prezime) {
+    private void AddUser (String ime, String prezime) {
         user.setIme(ime);
         user.setPrezime(prezime);
         user.setSerije(null);

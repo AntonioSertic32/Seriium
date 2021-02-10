@@ -31,4 +31,13 @@ public class User {
     public void setSerije(List<UserSerie> serije) {
         this.serije = serije;
     }
+
+    public User() {}
+
+    public User(String ime, String prezime, List<UserSerie> serije) {
+        this.ime = ime;
+        this.prezime = prezime;
+        this.serije = serije;
+    }
+
 }

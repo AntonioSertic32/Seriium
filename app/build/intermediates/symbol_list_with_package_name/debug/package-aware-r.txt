@@ -1782,7 +1782,7 @@ id bounce
 id btnChangeEmail
 id btnEditName
 id btnEditSurname
-id btnVertificateEmailw
+id btnVertificateEmail
 id buttonPanel
 id cache_measures
 id cancel_action

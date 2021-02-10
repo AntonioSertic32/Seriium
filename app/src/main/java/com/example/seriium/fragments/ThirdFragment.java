@@ -45,6 +45,8 @@ public class ThirdFragment extends Fragment {
     private ProgressBar progressBar;
     private TextView notEnoughInformation;
     private CardView card1;
+    private CardView card2;
+    private CardView card3;
 
     private TextView statMin;
     private TextView statYearsTxt;
@@ -89,6 +91,8 @@ public class ThirdFragment extends Fragment {
         progressBar = view.findViewById(R.id.f3_progressbar);
         notEnoughInformation = view.findViewById(R.id.notEnoughInformation);
         card1 = view.findViewById(R.id.card1);
+        card2 = view.findViewById(R.id.card2);
+        card3 = view.findViewById(R.id.card3);
 
         statMin = view.findViewById(R.id.statMin);
         statYearsTxt = view.findViewById(R.id.statYearsTxt);
@@ -122,9 +126,11 @@ public class ThirdFragment extends Fragment {
                 }
                 else {
                     card1.setVisibility(View.VISIBLE);
+                    card2.setVisibility(View.VISIBLE);
+                    card3.setVisibility(View.VISIBLE);
+                    printStatistic();
                 }
 
-                printStatistic();
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {

@@ -1781,7 +1781,7 @@ int id bounce 0x7f08005a
 int id btnChangeEmail 0x7f08005b
 int id btnEditName 0x7f08005c
 int id btnEditSurname 0x7f08005d
-int id btnVertificateEmailw 0x7f08005e
+int id btnVertificateEmail 0x7f08005e
 int id buttonPanel 0x7f08005f
 int id cache_measures 0x7f080060
 int id cancel_action 0x7f080061
