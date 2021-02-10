@@ -1,20 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.FourthFragment">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Button
-        android:id="@+id/userLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="odjava"
-        />
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".fragments.FourthFragment"
+        android:background="@color/blackOlive"
+        android:padding="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/userHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Korisnički račun"
+            android:textColor="@color/darkerBlush"
+            android:textSize="40dp"
+            android:fontFamily="sans-serif-light"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/userCard1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userHeading"
+            android:layout_marginTop="15dp"
+            android:visibility="visible"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/darkOlive"
+                android:padding="25dp">
+
+                <ImageView
+                    android:id="@+id/userIcon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/person"
+                    app:tint="@color/darkerBlush"
+                    />
+
+                <TextView
+                    android:id="@+id/userNameTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/userIcon"
+                    android:text="Ime: "
+                    android:textColor="@color/darkTurquoise"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/userNameTxt"
+                    app:layout_constraintTop_toTopOf="@+id/userNameTxt"
+                    android:text="Antonio"
+                    android:textColor="@color/darkerBlush"
+                    android:textSize="20dp"
+                    android:layout_marginStart="15dp"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btnEditName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/edit"
+                    android:backgroundTint="@color/darkTurquoise"
+                    android:tint="@color/darkOlive"
+                    app:layout_constraintTop_toTopOf="@+id/userNameTxt"
+                    app:layout_constraintBottom_toBottomOf="@+id/userNameTxt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/userSurnameTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/userNameTxt"
+                    app:layout_constraintTop_toBottomOf="@+id/userNameTxt"
+                    android:text="Prezime: "
+                    android:textColor="@color/darkTurquoise"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/userSurname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/userSurnameTxt"
+                    app:layout_constraintTop_toTopOf="@+id/userSurnameTxt"
+                    android:text="Sertic"
+                    android:textColor="@color/darkerBlush"
+                    android:textSize="20dp"
+                    android:layout_marginStart="15dp"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btnEditSurname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/edit"
+                    android:backgroundTint="@color/darkTurquoise"
+                    android:tint="@color/darkOlive"
+                    app:layout_constraintTop_toTopOf="@+id/userSurnameTxt"
+                    app:layout_constraintBottom_toBottomOf="@+id/userSurnameTxt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/userCard2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userCard1"
+            android:layout_marginTop="20dp"
+            android:visibility="visible"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/darkOlive"
+                android:padding="25dp">
+
+                <TextView
+                    android:id="@+id/userEmailTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="Email: "
+                    android:textColor="@color/darkTurquoise"
+                    android:textSize="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/userEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/userEmailTxt"
+                    app:layout_constraintTop_toTopOf="@+id/userEmailTxt"
+                    android:text="asertic@gmail.com"
+                    android:textColor="@color/darkerBlush"
+                    android:textSize="20dp"
+                    android:layout_marginStart="15dp"
+                    />
+
+                <TextView
+                    android:id="@+id/userVertificateEmailTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/userEmailTxt"
+                    app:layout_constraintTop_toBottomOf="@+id/userEmailTxt"
+                    android:text="Vertificirano: "
+                    android:textColor="@color/darkTurquoise"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/userVertificateEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/userVertificateEmailTxt"
+                    app:layout_constraintTop_toTopOf="@+id/userVertificateEmailTxt"
+                    android:text="Ne"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp"
+                    android:layout_marginStart="15dp"
+                    />
+
+                <Button
+                    android:id="@+id/btnChangeEmail"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/userVertificateEmailTxt"
+                    app:layout_constraintTop_toBottomOf="@+id/userVertificateEmailTxt"
+                    android:text="Promjeni email"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/darkTurquoise"
+                    android:textColor="@color/darkOlive"
+                    android:textSize="12dp"
+                    />
+                <Button
+                    android:id="@+id/btnVertificateEmailw"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btnChangeEmail"
+                    android:text="Vertifikacija"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textSize="12dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/userCard3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userCard2"
+            android:layout_marginTop="20dp"
+            android:visibility="visible"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/darkOlive"
+                android:padding="25dp">
+
+                <Button
+                    android:id="@+id/userLogout"
+                    android:layout_width="150dp"
+                    android:layout_height="55dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="Odjava"
+                    android:backgroundTint="@color/darkTurquoise"
+                    android:textColor="@color/darkOlive"
+                    android:textSize="12dp"
+                    />
+                <Button
+                    android:id="@+id/userResetPass"
+                    android:layout_width="150dp"
+                    android:layout_height="55dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/userLogout"
+                    android:text="Promjeni lozinku"
+                    android:backgroundTint="@color/darkTurquoise"
+                    android:textColor="@color/darkOlive"
+                    android:textSize="12dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

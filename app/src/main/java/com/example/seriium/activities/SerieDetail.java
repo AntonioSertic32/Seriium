@@ -2,8 +2,14 @@ package com.example.seriium.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+
+//import android.app.Fragment;
+import androidx.fragment.app.Fragment;
+
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +19,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,6 +28,8 @@ import android.widget.Toast;
 import com.example.seriium.R;
 import com.example.seriium.adapters.SeasonsAdapter;
 import com.example.seriium.adapters.SeasonsAdapterNotAdded;
+import com.example.seriium.fragments.FourthFragment;
+import com.example.seriium.fragments.SecondFragment;
 import com.example.seriium.listeners.OnSeasonClick;
 import com.example.seriium.listeners.OnSeasonNotAddedClick;
 import com.example.seriium.models.SerieDetails;
@@ -42,6 +51,7 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 import com.squareup.picasso.Picasso;
 
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +85,7 @@ public class SerieDetail extends AppCompatActivity implements Callback<SerieDeta
 
     private FloatingActionButton add_serie;
     private Button go_back;
+    private ImageButton goToUser;
 
     // API
     private SerieDetails serieDetails;
@@ -100,7 +111,6 @@ public class SerieDetail extends AppCompatActivity implements Callback<SerieDeta
     public static final int REQUEST = 2;
     private YouTubePlayerView youTubePlayerView;
     private LinearLayout youtubeLayout;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,6 +145,18 @@ public class SerieDetail extends AppCompatActivity implements Callback<SerieDeta
         go_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
+            }
+        });
+
+        goToUser = findViewById(R.id.goToUser);
+        goToUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // POSTAVITI PREFERENCES I ZATVORIT ACTIVITY
+                Intent intent = new Intent();
+                intent.putExtra("openUser", true);
+                setResult(RESULT_OK, intent);
                 finish();
             }
         });

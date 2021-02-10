@@ -30,6 +30,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.app.Activity.RESULT_OK;
+import static com.example.seriium.activities.SerieDetail.REQUEST;
 import static com.example.seriium.activities.SerieDetail.SERIE_ID;
 
 public class FirstFragment extends Fragment {
@@ -119,6 +121,17 @@ public class FirstFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
     {
+        if (resultCode == RESULT_OK && requestCode == MY_DETAILS_REQUEST) {
+            if (data.hasExtra("openUser")) {
+
+                // Make transaction
+                FourthFragment nextFrag= new FourthFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, nextFrag, "findThisFragment")
+                        .addToBackStack(null)
+                        .commit();
+            }
+        }
         if (resultCode == Activity.RESULT_CANCELED) {
             databaseSeries.clear();
             // Reload current fragment
@@ -128,8 +141,6 @@ public class FirstFragment extends Fragment {
                     .attach(this)
                     .commit();
         }
-        else {
-            Toast.makeText(getActivity(), "Error!", Toast.LENGTH_SHORT).show();
-        }
+
     }
 }

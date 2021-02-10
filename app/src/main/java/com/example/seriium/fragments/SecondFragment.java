@@ -3,6 +3,7 @@ package com.example.seriium.fragments;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -32,8 +33,12 @@ import com.example.seriium.activities.SerieDetail;
 import com.example.seriium.adapters.SeriesAdapter;
 import com.example.seriium.listeners.OnSerieClick;
 import com.example.seriium.models.Serie;
+import com.example.seriium.models.SerieDetails;
 import com.example.seriium.models.SerieResponse;
+import com.example.seriium.models.UserSerie;
 import com.example.seriium.network.RetrofitManager;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -41,6 +46,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.app.Activity.RESULT_OK;
+import static com.example.seriium.activities.SerieDetail.REQUEST;
 import static com.example.seriium.activities.SerieDetail.SERIE_ID;
 
 public class SecondFragment extends Fragment implements Callback<SerieResponse> {
@@ -157,6 +164,16 @@ public class SecondFragment extends Fragment implements Callback<SerieResponse> 
 
         return view;
     }
+    private String GetData (String key) {
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("MyPref", 0);
+        if(preferences.contains(key)){
+            String json = preferences.getString(key, null);
+            return json;
+        }
+        else {
+            return  null;
+        }
+    }
 
     @Override
     public void onResponse(Call<SerieResponse> call, Response<SerieResponse> response) {
@@ -254,13 +271,28 @@ public class SecondFragment extends Fragment implements Callback<SerieResponse> 
 
             Intent intent = new Intent(getActivity(), SerieDetail.class );
             intent.putExtra(SERIE_ID, serie.getId());
-            startActivity(intent);
+            startActivityForResult(intent, REQUEST);
         }
     };
 
     public static void hideSoftKeyboard(Activity activity) {
         InputMethodManager inputMethodManager = (InputMethodManager)  activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == REQUEST) {
+            if (data.hasExtra("openUser")) {
+
+                // Make transaction
+                FourthFragment nextFrag= new FourthFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, nextFrag, "findThisFragment")
+                        .addToBackStack(null)
+                        .commit();
+            }
+        }
     }
 
 }

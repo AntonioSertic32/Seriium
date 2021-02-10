@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -74,6 +75,7 @@ public class MySerieDetail extends AppCompatActivity {
 
     private Button go_back;
     private FloatingActionButton add_serie;
+    private ImageButton goToUser;
 
     // Description expansion
     private String full_description;
@@ -126,6 +128,18 @@ public class MySerieDetail extends AppCompatActivity {
         go_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
+            }
+        });
+
+        goToUser = findViewById(R.id.goToUser);
+        goToUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // POSTAVITI PREFERENCES I ZATVORIT ACTIVITY
+                Intent intent = new Intent();
+                intent.putExtra("openUser", true);
+                setResult(RESULT_OK, intent);
                 finish();
             }
         });

@@ -22,13 +22,14 @@ com/example/seriium/activities/SerieDetail.java
  com.example.seriium.activities.SerieDetail$1
  com.example.seriium.activities.SerieDetail$2
  com.example.seriium.activities.SerieDetail$3
- com.example.seriium.activities.SerieDetail$3$1
  com.example.seriium.activities.SerieDetail$4
+ com.example.seriium.activities.SerieDetail$4$1
  com.example.seriium.activities.SerieDetail$5
- com.example.seriium.activities.SerieDetail$5$1
- com.example.seriium.activities.SerieDetail$5$2
  com.example.seriium.activities.SerieDetail$6
+ com.example.seriium.activities.SerieDetail$6$1
+ com.example.seriium.activities.SerieDetail$6$2
  com.example.seriium.activities.SerieDetail$7
+ com.example.seriium.activities.SerieDetail$8
 com/example/seriium/models/UserSerie.java
  com.example.seriium.models.UserSerie
  com.example.seriium.models.UserSerie$1
@@ -68,12 +69,13 @@ com/example/seriium/activities/MySerieDetail.java
  com.example.seriium.activities.MySerieDetail$1
  com.example.seriium.activities.MySerieDetail$2
  com.example.seriium.activities.MySerieDetail$3
- com.example.seriium.activities.MySerieDetail$3$1
  com.example.seriium.activities.MySerieDetail$4
  com.example.seriium.activities.MySerieDetail$4$1
- com.example.seriium.activities.MySerieDetail$4$2
  com.example.seriium.activities.MySerieDetail$5
+ com.example.seriium.activities.MySerieDetail$5$1
+ com.example.seriium.activities.MySerieDetail$5$2
  com.example.seriium.activities.MySerieDetail$6
+ com.example.seriium.activities.MySerieDetail$7
 com/example/seriium/adapters/EpisodesAdapter.java
  com.example.seriium.adapters.EpisodesAdapter
  com.example.seriium.adapters.EpisodesAdapter$EpisodeViewHolder
