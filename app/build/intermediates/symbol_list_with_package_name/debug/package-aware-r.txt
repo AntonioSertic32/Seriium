@@ -1939,15 +1939,12 @@ id list_item
 id live_video_indicator
 id login_button
 id login_card
-id login_card2
 id login_email
 id login_password
 id login_progressbar
 id login_regbutton
 id login_switch
 id login_textreg
-id loginwithfacebook
-id loginwithgmail
 id masked
 id media_actions
 id menu_button

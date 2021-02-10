@@ -116,6 +116,16 @@ com/example/seriium/fragments/FourthFragment.java
  com.example.seriium.fragments.FourthFragment$3$1
  com.example.seriium.fragments.FourthFragment$3$2
  com.example.seriium.fragments.FourthFragment$4
+ com.example.seriium.fragments.FourthFragment$4$1
+ com.example.seriium.fragments.FourthFragment$5
+ com.example.seriium.fragments.FourthFragment$5$1
+ com.example.seriium.fragments.FourthFragment$5$1$1
+ com.example.seriium.fragments.FourthFragment$5$2
+ com.example.seriium.fragments.FourthFragment$6
+ com.example.seriium.fragments.FourthFragment$6$1
+ com.example.seriium.fragments.FourthFragment$6$1$1
+ com.example.seriium.fragments.FourthFragment$6$2
+ com.example.seriium.fragments.FourthFragment$7
 com/example/seriium/fragments/ThirdFragment.java
  com.example.seriium.fragments.ThirdFragment
  com.example.seriium.fragments.ThirdFragment$1

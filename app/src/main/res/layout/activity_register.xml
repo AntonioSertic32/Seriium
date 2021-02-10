@@ -28,9 +28,9 @@
         android:layout_height="440dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/login_card2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="70dp"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -198,51 +198,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/login_card2"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="20dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/lavanderBlush"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/loginwithgmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginEnd="15dp"
-                android:backgroundTint="@color/blackOlive"
-
-                app:srcCompat="@drawable/email"
-                app:tint="@color/lavanderBlush"
-                android:scaleType="center"
-                app:maxImageSize="30dp"
-                />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/loginwithfacebook"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@+id/loginwithgmail"
-                android:layout_marginStart="15dp"
-                android:backgroundTint="@color/blackOlive"
-
-                app:srcCompat="@drawable/facebook"
-                app:tint="@color/lavanderBlush"
-                android:scaleType="center"
-                app:maxImageSize="30dp"
-                />
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
