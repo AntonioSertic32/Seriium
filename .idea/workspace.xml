@@ -130,6 +130,7 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/background.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/check.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/clock.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edit.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/email.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/facebook.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/password.xml" afterDir="false" />
@@ -399,25 +400,25 @@
     </state>
     <state x="1182" y="287" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612724735237" />
     <state x="1182" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1608996056152" />
-    <state width="1365" height="343" key="GridCell.Tab.0.bottom" timestamp="1612912883932">
+    <state width="1876" height="343" key="GridCell.Tab.0.bottom" timestamp="1612962778629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1365" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612912883932" />
+    <state width="1876" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612962778629" />
     <state width="913" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1608999949637" />
-    <state width="1365" height="343" key="GridCell.Tab.0.center" timestamp="1612912883932">
+    <state width="1876" height="343" key="GridCell.Tab.0.center" timestamp="1612962778629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1365" height="343" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612912883932" />
+    <state width="1876" height="343" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612962778629" />
     <state width="913" height="297" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1608999949637" />
-    <state width="1365" height="343" key="GridCell.Tab.0.left" timestamp="1612912883932">
+    <state width="1876" height="343" key="GridCell.Tab.0.left" timestamp="1612962778628">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1365" height="343" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612912883932" />
+    <state width="1876" height="343" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612962778628" />
     <state width="913" height="297" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1608999949637" />
-    <state width="1365" height="343" key="GridCell.Tab.0.right" timestamp="1612912883932">
+    <state width="1876" height="343" key="GridCell.Tab.0.right" timestamp="1612962778629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1365" height="343" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612912883932" />
+    <state width="1876" height="343" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612962778629" />
     <state width="913" height="297" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1608999949637" />
     <state x="373" y="244" key="RollbackChangesDialog" timestamp="1612554569013">
       <screen x="0" y="0" width="1920" height="1040" />
